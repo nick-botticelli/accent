@@ -1,3 +1,8 @@
+#import <CoreFoundation/CoreFoundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 @interface _UIBackdropViewSettings : NSObject {}
 @property int style;
 + (id)settingsForStyle:(int)arg1;

@@ -102,7 +102,7 @@
 			<key>label</key>
 			<string>Current Hex</string>
 		</dict>
-		<dict>
+		<!--<dict>
 			<key>bundle</key>
 			<string>AppList</string>
 			<key>cell</key>
@@ -146,7 +146,7 @@
 					<string>1</string>
 				</dict>
 			</array>
-		</dict>
+		</dict>-->
 		<dict>
 			<key>cell</key>
 			<string>PSButtonCell</string>

@@ -1,8 +1,8 @@
 #import "Headers.h"
 
 #define isCurrentApp(string) [[[NSBundle mainBundle] bundleIdentifier] isEqual : string]
-#define PreferencesFilePath [NSString stringWithFormat:@"/var/mobile/Library/Preferences/com.ivanc.accentpreferences.plist"]
-#define ExcludedFilePath [NSString stringWithFormat:@"/var/mobile/Library/Preferences/com.ivanc.accentexcluded.plist"]
+#define PreferencesFilePath [NSString stringWithFormat:@"%s/var/mobile/Library/Preferences/com.ivanc.accentpreferences.plist", THEOS_PACKAGE_INSTALL_PREFIX]
+#define ExcludedFilePath [NSString stringWithFormat:@"%s/var/mobile/Library/Preferences/com.ivanc.accentexcluded.plist", THEOS_PACKAGE_INSTALL_PREFIX]
 #define PreferencesChangedNotification "com.ivanc.preferenceschanged"
 
 //Storing colors in a NSDictionary
@@ -97,8 +97,12 @@ void setColor() {
         }
     }
 
+    // TODO: Deprecated
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [[%c(UIApplication) sharedApplication] keyWindow];
-
+#pragma clang diagnostic pop
+    //[[UIApplication sharedApplication] delegate].window;
 }
 
 static void PreferencesChangedCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
