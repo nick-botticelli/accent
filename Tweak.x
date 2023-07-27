@@ -97,8 +97,8 @@ void setColor() {
         }
     }
 
-    [[%c(UIApplication) sharedApplication] keyWindow];
-
+    // Deprecated: [[%c(UIApplication) sharedApplication] keyWindow];
+    //[[UIApplication sharedApplication] delegate].window;
 }
 
 static void PreferencesChangedCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {

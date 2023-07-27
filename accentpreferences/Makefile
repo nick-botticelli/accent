@@ -1,4 +1,7 @@
 ARCHS = arm64 arm64e
+THEOS_PACKAGE_SCHEME = rootless
+#SDKVERSION = 14.5
+SYSROOT = $(THEOS)/sdks/iPhoneOS14.5.sdk
 
 include $(THEOS)/makefiles/common.mk
 
@@ -8,11 +11,9 @@ AccentPreferences_FILES = APBRootListController.m
 AccentPreferences_INSTALL_PATH = /Library/PreferenceBundles
 AccentPreferences_FRAMEWORKS = UIKit
 AccentPreferences_PRIVATE_FRAMEWORKS = Preferences
-AccentPreferences_CFLAGS = -fobjc-arc
+AccentPreferences_CFLAGS = -fobjc-arc -DTHEOS_LEAN_AND_MEAN
 AccentPreferences_EXTRA_FRAMEWORKS += Cephei CepheiPrefs
 AccentPreferences_LIBRARIES = colorpicker
-SDKVERSION = 13.3
-SYSROOT = $(THEOS)/sdks/iPhoneOS13.3.sdk
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 

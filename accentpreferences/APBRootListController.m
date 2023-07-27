@@ -1,5 +1,5 @@
 #include "APBRootListController.h"
-#import <CepheiPrefs/HBAppearanceSettings.h>
+//#import <CepheiPrefs/HBAppearanceSettings.h>
 #import "libcolorpicker.h"
 
 #define PreferencesFilePath [NSString stringWithFormat:@"/var/mobile/Library/Preferences/com.ivanc.accentpreferences.plist"]
